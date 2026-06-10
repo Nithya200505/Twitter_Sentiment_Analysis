@@ -1,19 +1,19 @@
 # 🐦 Twitter Sentiment Analysis AI Dashboard
 
-A Machine Learning and Flask-based web application that analyzes tweets and predicts whether the sentiment is **Positive 😊**, **Negative 😞**, or **Neutral 😐**. The application uses TF-IDF Vectorization and a trained Machine Learning model to classify text and visualize sentiment probabilities through an interactive dashboard.
+A Machine Learning and Flask-based web application that analyzes tweets and predicts whether the sentiment is **Positive 😊, Negative 😞, or Neutral 😐**. The application uses **TF-IDF Vectorization** and a trained Machine Learning model to classify text and visualize sentiment probabilities through an interactive dashboard.
 
 ---
 
 ## 🚀 Features
 
-* ✅ Tweet Sentiment Prediction
-* ✅ Positive, Negative, and Neutral Classification
-* ✅ Confidence Score Display
-* ✅ Sentiment Probability Bars
-* ✅ Interactive Pie Chart Visualization
-* ✅ Modern Glassmorphism UI Design
-* ✅ Flask Web Application
-* ✅ Real-Time Prediction Results
+✅ Tweet Sentiment Prediction
+✅ Positive, Negative, and Neutral Classification
+✅ Confidence Score Display
+✅ Sentiment Probability Bars
+✅ Interactive Pie Chart Visualization
+✅ Modern Glassmorphism UI Design
+✅ Flask Web Application
+✅ Real-Time Prediction Results
 
 ---
 
@@ -40,6 +40,26 @@ A Machine Learning and Flask-based web application that analyzes tweets and pred
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home Page](screenshots/home_page.png)
+
+### 😊 Positive Prediction
+
+![Positive Result](screenshots/positive_result.png)
+
+### 😞 Negative Prediction
+
+![Negative Result](screenshots/negative_result.png)
+
+### 😐 Neutral Prediction
+
+![Neutral Result](screenshots/neutral_result.png)
+
+---
+
 ## 📂 Project Structure
 
 ```text
@@ -59,6 +79,12 @@ Twitter_Sentiment_Analysis/
 │
 ├── static/
 │   └── style.css
+│
+├── screenshots/
+│   ├── home_page.png
+│   ├── positive_result.png
+│   ├── negative_result.png
+│   └── neutral_result.png
 │
 └── README.md
 ```
