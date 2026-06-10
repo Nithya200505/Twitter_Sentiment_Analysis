@@ -1,0 +1,139 @@
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    min-height:100vh;
+    margin:0;
+}
+
+/* MAIN CARD */
+.container{
+    width:60%;
+    margin:50px auto;
+    padding:35px;
+    border-radius:20px;
+
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(20px);
+
+    border:1px solid rgba(255,255,255,0.25);
+
+    color:white;
+    text-align:center;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* INPUT */
+textarea{
+    width:90%;
+    padding:15px;
+    border-radius:12px;
+    border:none;
+    outline:none;
+    resize:none;
+    font-size:16px;
+}
+
+/* BUTTON */
+button{
+    background:white;
+    color:#764ba2;
+    padding:12px 30px;
+    border:none;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* RESULT */
+.result{
+    margin-top:25px;
+    padding:25px;
+    border-radius:18px;
+    background: rgba(255,255,255,0.22);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* LOADING */
+.loading{
+    animation: blink 1s infinite;
+    font-weight:bold;
+}
+
+@keyframes blink{
+    50%{opacity:0.4;}
+}
+
+/* CONFIDENCE BAR */
+.progress{
+    width:80%;
+    height:28px;
+    margin:20px auto;
+    background: rgba(255,255,255,0.25);
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    background: linear-gradient(90deg,#00c853,#64dd17);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition: width 1.2s ease-in-out;
+}
+
+/* SENTIMENT BARS */
+.bar-container{
+    width:80%;
+    margin:20px auto;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.bar-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.bar-label{
+    width:90px;
+    text-align:left;
+    font-weight:bold;
+}
+
+.bar{
+    height:35px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-weight:bold;
+    border-radius:20px;
+}
+
+.positive{
+    background: linear-gradient(90deg,#00c853,#64dd17);
+}
+
+.negative{
+    background: linear-gradient(90deg,#ff5252,#d50000);
+}
+
+.neutral{
+    background: linear-gradient(90deg,#ffa726,#ffcc80);
+}
+
+/* EMOJI */
+.emoji{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+canvas{
+    margin-top:20px;
+    max-width:300px;
+}

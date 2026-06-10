@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Twitter Sentiment AI Dashboard</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🐦 Twitter Sentiment AI Dashboard</h1>
+
+    <form action="/predict" method="post">
+        <textarea name="tweet" rows="5" placeholder="Enter tweet here..." required></textarea>
+        <br><br>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+
+    {% if prediction %}
+
+    <div class="result">
+
+        <div class="loading">Analyzing sentiment...</div>
+
+        <h3>Tweet</h3>
+        <p>{{ tweet }}</p>
+
+        <h2 style="color: {{ color }}">
+            {{ prediction }}
+        </h2>
+
+        <!-- CONFIDENCE -->
+        <h3>Confidence</h3>
+        <div class="progress">
+            <div class="progress-fill" style="width: {{ confidence }}%;">
+                {{ confidence }}%
+            </div>
+        </div>
+
+        <!-- EMOJI -->
+        <div class="emoji">
+            {% if prediction == "Positive 😊" %}
+                😄 Happy Result
+            {% elif prediction == "Negative 😞" %}
+                😡 Negative Result
+            {% else %}
+                😐 Neutral Result
+            {% endif %}
+        </div>
+
+        <!-- SENTIMENT BARS -->
+        <h3>Sentiment Probability</h3>
+
+        <div class="bar-container">
+
+            <div class="bar-row">
+                <div class="bar-label">Negative</div>
+                <div class="bar negative" style="width: {{ negative }}%;">
+                    {{ negative }}%
+                </div>
+            </div>
+
+            <div class="bar-row">
+                <div class="bar-label">Positive</div>
+                <div class="bar positive" style="width: {{ positive }}%;">
+                    {{ positive }}%
+                </div>
+            </div>
+
+            <div class="bar-row">
+                <div class="bar-label">Neutral</div>
+                <div class="bar neutral" style="width: {{ neutral }}%;">
+                    {{ neutral }}%
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PIE CHART -->
+        <h3>Sentiment Overview</h3>
+        <canvas id="sentimentChart"></canvas>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+<!-- CHART SCRIPT -->
+<script>
+const ctx = document.getElementById('sentimentChart');
+
+if (ctx) {
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Positive', 'Negative', 'Neutral'],
+            datasets: [{
+                data: [
+                    {{ positive }},
+                    {{ negative }},
+                    {{ neutral }}
+                ],
+                backgroundColor: [
+                    '#00c853',
+                    '#ff5252',
+                    '#ffa726'
+                ]
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white'
+                    }
+                }
+            }
+        }
+    });
+}
+</script>
+
+</body>
+
+</html>

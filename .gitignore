@@ -1,0 +1,4 @@
+data/tweets.csv
+*.csv
+__pycache__/
+*.pyc
