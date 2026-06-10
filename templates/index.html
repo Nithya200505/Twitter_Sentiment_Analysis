@@ -26,9 +26,9 @@
 
     <div class="result">
 
-        <div class="loading">Analyzing sentiment...</div>
+        
 
-        <h3>Tweet</h3>
+        <h3>📝 Tweet</h3>
         <p>{{ tweet }}</p>
 
         <h2 style="color: {{ color }}">
@@ -36,7 +36,7 @@
         </h2>
 
         <!-- CONFIDENCE -->
-        <h3>Confidence</h3>
+        <h3>📊 Confidence</h3>
         <div class="progress">
             <div class="progress-fill" style="width: {{ confidence }}%;">
                 {{ confidence }}%
@@ -55,7 +55,7 @@
         </div>
 
         <!-- SENTIMENT BARS -->
-        <h3>Sentiment Probability</h3>
+        <h3>📈 Sentiment Probability</h3>
 
         <div class="bar-container">
 
@@ -83,8 +83,8 @@
         </div>
 
         <!-- PIE CHART -->
-        <h3>Sentiment Overview</h3>
-        <canvas id="sentimentChart"></canvas>
+        <h3>🥧 Sentiment Overview</h3>
+        <canvas id="sentimentChart" width="300" height="300"></canvas>
 
     </div>
 
