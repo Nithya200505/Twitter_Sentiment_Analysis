@@ -54,10 +54,6 @@ A Machine Learning and Flask-based web application that analyzes tweets and pred
 
 ![Negative Result](screenshots/negative_result.png)
 
-### 😐 Neutral Prediction
-
-![Neutral Result](screenshots/neutral_result.png)
-
 ---
 
 ## 📂 Project Structure
@@ -83,8 +79,8 @@ Twitter_Sentiment_Analysis/
 ├── screenshots/
 │   ├── home_page.png
 │   ├── positive_result.png
-│   ├── negative_result.png
-│   └── neutral_result.png
+│   └── negative_result.png
+│   
 │
 └── README.md
 ```
